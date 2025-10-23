@@ -1,0 +1,151 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        margin: 30px;
+        width: 300px;
+        height: 500px;
+        background-color: red;
+        cursor: pointer;
+        object-fit: contain;
+        perspective: 1000;
+        mask-origin: center;
+    }
+
+    img {
+        width: 300px;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .card :nth-child(2) {
+        position: absolute;
+        opacity: 0;
+    }
+    .card:hover{
+        transform: skewY(30deg);
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="card">
+
+            <img src="https://nexodyss.in/cdn/shop/files/metal_sizzae_17e56176-11ab-4468-8b58-420e354f2ec7.jpg?v=1749237230&width=1946" alt="">
+
+            <img src="https://i.pinimg.com/736x/8d/25/8e/8d258e6331c70a5e266ecbebbee915f4.jpg" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2J5qDG2CU9G0oAk8uqPl8JH22HbVvB3JqwA&s"
+                alt="">
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Hover Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+        }
+
+        .main {
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 300px;
+            height: 500px;
+            background-color: red;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: rotateX(18deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .character-image {
+            width: 300px;
+            height: 500px;
+            pointer-events: none;
+            position: absolute;
+            top: 0px;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.6s ease;
+            z-index: 9;
+        }
+
+        .main:hover .character-image {
+            position: absolute;
+            transform: translateY(0px);
+            opacity: .7;
+        }
+        .text{
+            color: white;
+            position: relative;
+            bottom: 20px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card">
+            <!-- <img src="https://i.pinimg.com/736x/8d/25/8e/8d258e6331c70a5e266ecbebbee915f4.jpg" alt="Card Image" /> -->
+            <img src="/Assets/Images/igris.jpg"
+                alt="">
+            <div class="text">
+                <div>Igris</div>
+                <div>Solo Leveling</div>
+            </div>
+        </div>
+        <img class="character-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2J5qDG2CU9G0oAk8uqPl8JH22HbVvB3JqwA&s" alt="">
+    </div>
+</body>
+
+</html>
